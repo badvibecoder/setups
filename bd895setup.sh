@@ -19,7 +19,23 @@ sudo wget -O ~/.local/bin/vibetyper https://github.com/badvibecoder/vibetyper/re
 sudo wget -O ~/.local/bin/vibekeytester https://github.com/badvibecoder/vibekeytester/releases/download/v0.1.0/vibekeytester
 sudo chmod +x ~/.local/bin/{odin-player,odin-trainer,vibetyper,vibekeytester}
 
-# curl -fsSL https://ollama.com/install.sh | sh
+# Install Ollama and configure for Navi21
+curl -fsSL https://ollama.com/install.sh | sh
+sudo mkdir -p /etc/systemd/system/ollama.service.d
+printf '[Service]\nEnvironment="HSA_OVERRIDE_GFX_VERSION=10.3.0"\nEnvironment="OLLAMA_FLASH_ATTENTION=1"\nEnvironment="OLLAMA_KV_CACHE_TYPE=q8_0"\n' | sudo tee /etc/systemd/system/ollama.service.d/override.conf > /dev/null
+sudo systemctl daemon-reload
+sudo systemctl restart ollama.service
+
+# Generate ollama-pull.sh inside ~/Documents
+cat << 'EOF' > "$HOME/Documents/ollama-pull.sh"
+#!/usr/bin/env bash
+
+ollama pull ornith-1.5:9b
+ollama pull qwen3.8:27b
+ollama pull gemma4:latest
+ollama pull gpt-oss:20b
+
+EOF
 
 # yt-dlp gathering
 # Generate yt.sh inside ~/Documents
