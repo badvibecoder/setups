@@ -118,6 +118,11 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
+
+cat << 'EOF' > "$HOME/Documents/background-bananaprompt-anime.txt"
+A dramatic, wide-angle cinematic anime illustration in a polished, detailed cel-shaded art style. The foreground features a close-up three-quarter view of a young anime girl with a short dark bob haircut, wearing an oversized mustard-yellow t-shirt and a dark grey backpack strap over her shoulder. She is looking up and to the right with a deeply sorrowful expression and visible tears streaming down her cheek. Her face is starkly lit by a warm, orange-yellow light from the right, contrasting heavily with deep, cool indigo shadows on the left. The background is a melancholic edge-of-town landscape at twilight. The sky is deep indigo and dark blue with subtle stylized clouds. On the right horizon, a large orange-yellow setting sun casts a vibrant low glow. Utility poles and wires stretch down the right side of an empty asphalt road toward the horizon, where a tiny, solitary silhouetted human figure stands in the distance. On the left, a cluster of silhouetted factory buildings is visible. The overall style features clean, sharp line work, flat colors with crisp cel-shaded shadows, and a cinematic 90s retro-anime aesthetic with a highly detailed finish.
+EOF
+
 # rclone - sign in on browser first
 #rclone config
 
