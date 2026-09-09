@@ -141,33 +141,33 @@ EOF
 # jobs , then kill %1 to end
 
 # Lact setup post install, grub, reboot
-# sudo tee /etc/lact/config.yaml > /dev/null << 'EOF'
-# version: 7
-# daemon:
-#   log_level: info
-#   admin_group: wheel
-#   disable_clocks_cleanup: false
-# apply_settings_timer: 5
-# gpus:
-#   1002:73A5-1EAE:6950-0000:03:00.0:
-#     fan_control_enabled: true
-#     fan_control_settings:
-#       mode: curve
-#       static_speed: 0.5
-#       temperature_key: edge
-#       interval_ms: 500
-#       curve:
-#         40: 0.25
-#         48: 0.34
-#         56: 0.45
-#         63: 0.54
-#         71: 0.64
-#       spindown_delay_ms: 8000
-#       change_threshold: 2
-#     performance_level: auto
-#     max_core_clock: 2400
-#     voltage_offset: -40
-# current_profile: null
-# auto_switch_profiles: false
-# EOF
+sudo tee /etc/lact/config.yaml > /dev/null << 'EOF'
+version: 7
+daemon:
+  log_level: info
+  admin_group: wheel
+  disable_clocks_cleanup: false
+apply_settings_timer: 5
+gpus:
+  1002:73A5-1EAE:6950-0000:03:00.0:
+    fan_control_enabled: true
+    fan_control_settings:
+      mode: curve
+      static_speed: 0.5
+      temperature_key: edge
+      interval_ms: 500
+      curve:
+        40: 0.25
+        50: 0.35
+        59: 0.45
+        66: 0.54
+        73: 0.65
+      spindown_delay_ms: 9000
+      change_threshold: 2
+    performance_level: auto
+    max_core_clock: 2400
+    voltage_offset: -40
+current_profile: null
+auto_switch_profiles: false
+EOF
 
