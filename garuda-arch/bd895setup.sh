@@ -89,6 +89,45 @@ EOF
 # jobs , then kill %1 to end
 mkdir -p ~/dev/dsh
 
+cat << 'EOF' > "$HOME/Documents/github.sh"
+#!/usr/bin/env bash
+
+#
+#
+#
+ssh-keygen -t ed25519 -C ""
+
+echo '-----BEGIN OPENSSH PRIVATE KEY-----' > ~/.ssh/id_ed25519
+echo '-----END OPENSSH PRIVATE KEY-----' >> ~/.ssh/id_ed25519
+echo ''
+users.noreply.github.com' > ~/.ssh/id_ed25519.pub
+#
+#
+#
+
+mkdir ~/Github
+
+git clone git@github.com:badvibecoder/agentics.git ~/Github
+git clone git@github.com:badvibecoder/bp.git ~/Github
+git clone git@github.com:badvibecoder/docs.git ~/Github
+git clone git@github.com:badvibecoder/meshpinger.git ~/Github
+git clone git@github.com:badvibecoder/odin-player.git ~/Github
+git clone git@github.com:badvibecoder/odin-trainer.git ~/Github
+git clone git@github.com:badvibecoder/pk.git ~/Github
+git clone git@github.com:badvibecoder/private-archive-only.git ~/Github
+git clone git@github.com:badvibecoder/ps-media-convert.git ~/Github
+git clone git@github.com:badvibecoder/pytorch-bert-benchmark.git ~/Github
+git clone git@github.com:badvibecoder/setups.git ~/Github
+git clone git@github.com:badvibecoder/thermal-archive.git ~/Github
+git clone git@github.com:badvibecoder/tpuscrape.git ~/Github
+git clone git@github.com:badvibecoder/vibekeytester.git ~/Github
+git clone git@github.com:badvibecoder/vibetyper.git ~/Github
+git clone git@github.com:badvibecoder/xpu.git ~/Github
+
+git config --global user.name "badvibecoder"
+git config --global user.email "248558263+badvibecoder@users.noreply.github.com"
+EOF
+
 # Lact setup post install, grub, reboot
 sudo tee ~/.config/lact/ui.yaml > /dev/null << 'EOF'
 version: 7
