@@ -87,6 +87,7 @@ EOF
 # run deepseek harness
 # nohup bunx @deepseek-ai/dsh web > /dev/null 2>&1 &
 # jobs , then kill %1 to end
+mkdir -p ~/dev/dsh
 
 # Lact setup post install, grub, reboot
 sudo tee ~/.config/lact/ui.yaml > /dev/null << 'EOF'
