@@ -13,11 +13,12 @@ yay -S --noconfirm google-chrome visual-studio-code-bin
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Grab my programs
-sudo wget -O ~/.local/bin/odin-player https://github.com/badvibecoder/odin-player/releases/download/v0.1.0/odin-player
+sudo wget -O ~/.local/bin/odin-player https://github.com/badvibecoder/odin-player/releases/download/v0.1.1/odin-player
 sudo wget -O ~/.local/bin/odin-trainer https://github.com/badvibecoder/odin-trainer/releases/download/v0.1.0/odin-trainer
 sudo wget -O ~/.local/bin/vibetyper https://github.com/badvibecoder/vibetyper/releases/download/v0.1.0/vibetyper
 sudo wget -O ~/.local/bin/vibekeytester https://github.com/badvibecoder/vibekeytester/releases/download/v0.1.0/vibekeytester
-sudo chmod +x ~/.local/bin/{odin-player,odin-trainer,vibetyper,vibekeytester}
+sudo wget -O ~/.local/bin/vibepat https://github.com/badvibecoder/vibepat/releases/download/v0.1.0/vibepat-linux-amd64
+sudo chmod +x ~/.local/bin/{odin-player,odin-trainer,vibetyper,vibekeytester,vibepat}
 
 # curl -fsSL https://ollama.com/install.sh | sh
 
