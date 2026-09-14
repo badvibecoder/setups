@@ -15,6 +15,8 @@ echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> ~/.bashrc
 #
 # "dsh" to run, "dsh-kill" to stop
 #
+# Manual check: 'pgrep -fl "@deepseek-ai/dsh"'
+#
 # nohup bunx @deepseek-ai/dsh web > /dev/null 2>&1 &
 # jobs , then kill %1 to end
 mkdir -p ~/dev/dsh
