@@ -3,8 +3,37 @@
 sudo dnf update -y
 
 # Install apps
-sudo dnf install git curl wget rclone vim minetest openssh-server s-tui age obs-studio steam -y
+sudo dnf install git curl wget rclone nodejs vim minetest openssh-server s-tui age obs-studio steam -y
 sudo systemctl enable --now sshd
+
+# Install bun
+curl -fsSL https://bun.sh/install | bash
+echo 'export BUN_INSTALL="$HOME/.bun"' >> ~/.bashrc
+echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> ~/.bashrc
+
+# Run deepseek harness
+#
+# "dsh" to run, "dsh-kill" to stop
+#
+# nohup bunx @deepseek-ai/dsh web > /dev/null 2>&1 &
+# jobs , then kill %1 to end
+mkdir -p ~/dev/dsh
+mkdir -p ~/.local/bin
+cat << 'EOF' > ~/.local/bin/dsh
+#!/usr/bin/env bash
+nohup bunx @deepseek-ai/dsh web > /dev/null 2>&1 &
+EOF
+chmod +x ~/.local/bin/dsh
+# Add dsh-kill
+cat << 'EOF' > ~/.local/bin/dsh-kill
+#!/usr/bin/env bash
+if pkill -f "@deepseek-ai/dsh"; then
+  echo "Terminated dsh."
+else
+  echo "No running dsh process found."
+fi
+EOF
+chmod +x ~/.local/bin/dsh-kill
 
 # Install Odin
 sudo dnf install git clang llvm-devel -y
